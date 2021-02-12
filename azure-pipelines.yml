@@ -85,5 +85,8 @@ jobs:
     condition: succeededOrFailed()
     inputs:
       testResultsFormat: VSTest
-      testResultsFiles: '**/*.trx' 
+      testResultsFiles: '**/*.trx'  
+  - task: DotNetCoreCLI@2
+        inputs:
+          command: 'build'
   - task: PublishBuildArtifacts@1
